@@ -1,0 +1,21 @@
+ALF (Alert Log Finder) allows you to get to the alert log of an Oracle database automatically without 
+manually navigating "bdump" or "diag" directories (depending on the software version).  All you have to
+do is run ". oraenv" command and specify ORACLE_SID, after which you can use the script.
+
+Example:
+
+$ . oraenv
+ORACLE_SID = [orcl] ? chicago
+The Oracle base remains unchanged with value /u01/app/oracle
+$ ./alf.sh
+
+This opens the alert log with "less" command so you are free to navigate it.
+
+Note:
+
+It is convenient to place ALF in your common scripts directory (e.g. /u01/app/oracle/scripts) and create
+a short alias for it in .bashrc:
+
+alias al='/u01/app/oracle/scripts/alert/alf.sh'
+
+After that you can call it anywhere via "al" command.
